@@ -6,40 +6,98 @@ namespace rockPaperScissors
     {
         static void Main(string[] args)
         {
-            // 0 = "rock"
-            // 1 = "paper"
-            // 2 = "scissors
+            int computerRounds = 0;
+            int userRounds = 0;
 
-            Random random = new Random();
-            int computerSelection = random.Next(3);
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"Round {i + 1}");
 
-            Console.WriteLine($"Rock, paper or scissors?");
-            string userInput = Console.ReadLine();
+                for (int ii = 0; ii <= i; ii++)
+                {
+                    int computerWins = 0;
+                    int userWins = 0;
 
-            string userSelection = userInput.ToLower();
+                    // random computer selection
+                    Random random = new Random();
+                    int computerSelection = random.Next(3);
 
-            if (computerSelection == 0 && userSelection == "rock") {
-                Console.WriteLine("Computer threw rock.\nIt's a draw!");
-            } else if (computerSelection == 0 && userSelection == "scissors") {
-                Console.WriteLine("Computer threw rock.\nYou lost!");
-            } else if (computerSelection == 0 && userSelection == "paper") {
-                Console.WriteLine("Computer threw rock.\nYou won!");
+                    // user selection
+                    Console.WriteLine($"Rock, paper or scissors?");
+                    string userInput = Console.ReadLine();
+
+                    // makes user selection lowercase
+                    string userSelection = userInput.ToLower();
+
+                    // case 0 == "rock"
+                    if (computerSelection == 0 && userSelection == "rock")
+                    {
+                        Console.WriteLine("Computer threw rock.\nIt's a draw!");
+                    }
+                    else if (computerSelection == 0 && userSelection == "scissors")
+                    {
+                        Console.WriteLine("Computer threw rock.\nYou lost!");
+                        computerWins++;
+                    }
+                    else if (computerSelection == 0 && userSelection == "paper")
+                    {
+                        Console.WriteLine("Computer threw rock.\nYou won!");
+                        userWins++;
+                    }
+
+                    // case 1 == "paper"
+                    if (computerSelection == 1 && userSelection == "rock")
+                    {
+                        Console.WriteLine("Computer threw paper.\nYou lost!");
+                        computerWins++;
+                    }
+                    else if (computerSelection == 1 && userSelection == "paper")
+                    {
+                        Console.WriteLine("Computer threw paper.\nIt's a draw!");
+                    }
+                    else if (computerSelection == 1 && userSelection == "scissors")
+                    {
+                        Console.WriteLine("Computer threw paper.\nYou won!");
+                        userWins++;
+                    }
+
+                    // case 2 == "scissors
+                    if (computerSelection == 2 && userSelection == "rock")
+                    {
+                        Console.WriteLine("Computer threw scissors.\nYou won!");
+                        userWins++;
+                    }
+                    else if (computerSelection == 2 && userSelection == "paper")
+                    {
+                        Console.WriteLine("Computer threw scissors.\nYou lost!");
+                        computerWins++;
+                    }
+                    else if (computerSelection == 2 && userSelection == "scissors")
+                    {
+                        Console.WriteLine("Computer threw scissors.\nIt's a draw!");
+                    }
+
+                    if (computerWins == userWins)
+                    {
+                        Console.WriteLine("It's a draw!");
+                    }
+                    else if (computerWins > userWins)
+                    {
+                        Console.WriteLine("Computer won this round!");
+                        computerRounds++;
+                    }
+                    else if (computerWins < userWins)
+                    {
+                        Console.WriteLine("You won this round!");
+                        userRounds++;
+                    }
+                }
             }
 
-            if (computerSelection == 1 && userSelection == "rock") {
-                Console.WriteLine("Computer threw paper.\nYou lost!");
-            } else if (computerSelection == 1 && userSelection == "paper") {
-                Console.WriteLine("Computer threw paper.\nIt's a draw!");
-            } else if (computerSelection == 1 && userSelection == "scissors") {
-                Console.WriteLine("Computer threw paper.\nYou won!");
-            }
-
-            if (computerSelection == 2 && userSelection == "rock") {
-                Console.WriteLine("Computer threw scissors.\nYou won!");
-            } else if (computerSelection == 2 && userSelection == "paper") {
-                Console.WriteLine("Computer threw scissors.\nYou lost!");
-            } else if (computerSelection == 2 && userSelection == "scissors") {
-                Console.WriteLine("Computer threw scissors.\nIt's a draw!");
+            if (computerRounds > userRounds) {
+                Console.WriteLine("Computer won the game");
+            } else {
+                Console.WriteLine("You won the game!");
             }
         }
     }
