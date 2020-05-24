@@ -11,13 +11,13 @@ namespace rockPaperScissors
 
             for (int i = 0; i < 3; i++)
             {
+                int computerWins = 0;
+                int userWins = 0;
+
                 Console.WriteLine($"Round {i + 1}");
 
-                for (int ii = 0; ii <= i; ii++)
+                for (int ii = 0; ii < 3; ii++)
                 {
-                    int computerWins = 0;
-                    int userWins = 0;
-
                     // random computer selection
                     Random random = new Random();
                     int computerSelection = random.Next(3);
@@ -76,28 +76,37 @@ namespace rockPaperScissors
                     {
                         Console.WriteLine("Computer threw scissors.\nIt's a draw!");
                     }
-
-                    if (computerWins == userWins)
-                    {
-                        Console.WriteLine("It's a draw!");
-                    }
-                    else if (computerWins > userWins)
-                    {
-                        Console.WriteLine("Computer won this round!");
-                        computerRounds++;
-                    }
-                    else if (computerWins < userWins)
-                    {
-                        Console.WriteLine("You won this round!");
-                        userRounds++;
-                    }
                 }
+
+                if (computerWins == userWins)
+                {
+                    Console.WriteLine("It's a draw!");
+                }
+                else if (computerWins > userWins)
+                {
+                    Console.WriteLine("Computer won this round!");
+                    computerRounds++;
+                }
+                else if (computerWins < userWins)
+                {
+                    Console.WriteLine("You won this round!");
+                    userRounds++;
+                }
+
+                Console.ReadLine();
             }
 
-            if (computerRounds > userRounds) {
+            if (computerRounds > userRounds)
+            {
                 Console.WriteLine("Computer won the game");
-            } else {
+            }
+            else if (computerRounds < userRounds)
+            {
                 Console.WriteLine("You won the game!");
+            }
+            else if (computerRounds == userRounds)
+            {
+                Console.WriteLine("The game was a draw...");
             }
         }
     }
