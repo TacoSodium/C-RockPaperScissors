@@ -30,66 +30,66 @@ namespace rockPaperScissors
                     string userSelection = userInput.ToLower();
 
                     // case 0 == "rock"
-                    if (computerSelection == 0 && userSelection == "rock")
+                    if (computerSelection == 0 && userSelection == "rock\n")
                     {
-                        Console.WriteLine("Computer threw rock.\nIt's a draw!");
+                        Console.WriteLine("Computer threw rock.\nIt's a draw!\n");
                     }
-                    else if (computerSelection == 0 && userSelection == "scissors")
+                    else if (computerSelection == 0 && userSelection == "scissors\n")
                     {
-                        Console.WriteLine("Computer threw rock.\nYou lost!");
+                        Console.WriteLine("Computer threw rock.\nYou lost!\n");
                         computerWins++;
                     }
-                    else if (computerSelection == 0 && userSelection == "paper")
+                    else if (computerSelection == 0 && userSelection == "paper\n")
                     {
-                        Console.WriteLine("Computer threw rock.\nYou won!");
+                        Console.WriteLine("Computer threw rock.\nYou won!\n");
                         userWins++;
                     }
 
                     // case 1 == "paper"
-                    if (computerSelection == 1 && userSelection == "rock")
+                    if (computerSelection == 1 && userSelection == "rock\n")
                     {
-                        Console.WriteLine("Computer threw paper.\nYou lost!");
+                        Console.WriteLine("Computer threw paper.\nYou lost!\n");
                         computerWins++;
                     }
-                    else if (computerSelection == 1 && userSelection == "paper")
+                    else if (computerSelection == 1 && userSelection == "paper\n")
                     {
-                        Console.WriteLine("Computer threw paper.\nIt's a draw!");
+                        Console.WriteLine("Computer threw paper.\nIt's a draw!\n");
                     }
-                    else if (computerSelection == 1 && userSelection == "scissors")
+                    else if (computerSelection == 1 && userSelection == "scissors\n")
                     {
-                        Console.WriteLine("Computer threw paper.\nYou won!");
+                        Console.WriteLine("Computer threw paper.\nYou won!\n");
                         userWins++;
                     }
 
                     // case 2 == "scissors
-                    if (computerSelection == 2 && userSelection == "rock")
+                    if (computerSelection == 2 && userSelection == "rock\n")
                     {
-                        Console.WriteLine("Computer threw scissors.\nYou won!");
+                        Console.WriteLine("Computer threw scissors.\nYou won!\n");
                         userWins++;
                     }
-                    else if (computerSelection == 2 && userSelection == "paper")
+                    else if (computerSelection == 2 && userSelection == "paper\n")
                     {
-                        Console.WriteLine("Computer threw scissors.\nYou lost!");
+                        Console.WriteLine("Computer threw scissors.\nYou lost!\n");
                         computerWins++;
                     }
-                    else if (computerSelection == 2 && userSelection == "scissors")
+                    else if (computerSelection == 2 && userSelection == "scissors\n")
                     {
-                        Console.WriteLine("Computer threw scissors.\nIt's a draw!");
+                        Console.WriteLine("Computer threw scissors.\nIt's a draw!\n");
                     }
                 }
 
                 if (computerWins == userWins)
                 {
-                    Console.WriteLine("It's a draw!");
+                    Console.WriteLine("It's a draw!\n");
                 }
                 else if (computerWins > userWins)
                 {
-                    Console.WriteLine("Computer won this round!");
+                    Console.WriteLine("Computer won this round!\n");
                     computerRounds++;
                 }
                 else if (computerWins < userWins)
                 {
-                    Console.WriteLine("You won this round!");
+                    Console.WriteLine("You won this round!\n");
                     userRounds++;
                 }
 
@@ -98,15 +98,15 @@ namespace rockPaperScissors
 
             if (computerRounds > userRounds)
             {
-                Console.WriteLine("Computer won the game");
+                Console.WriteLine("Computer won the game...\n");
             }
             else if (computerRounds < userRounds)
             {
-                Console.WriteLine("You won the game!");
+                Console.WriteLine("You won the game!\n");
             }
             else if (computerRounds == userRounds)
             {
-                Console.WriteLine("The game was a draw...");
+                Console.WriteLine("The game was a draw...\n");
             }
         }
     }
